@@ -2951,7 +2951,7 @@ function compile(command, text, randomseed) {
         
         if (IDE){
             if (state.metadata.title!==undefined) {
-                document.title="PuzzleScript - " + state.metadata.title;
+                document.title="PuzzleScriptWS - " + state.metadata.title;
             }
         }
     }

@@ -7239,7 +7239,7 @@ var messagecontainer_template = [
 	"..................................",
 	"..................................",
 	"..................................",
-	"..........X to continue...........",
+	"..........tap to continue.........",
 	"..................................",
 	".................................."
 ];
@@ -7254,9 +7254,9 @@ var titletemplate_firstgo = [
 	"..........#.start game.#..........",
 	"..................................",
 	"..................................",
-	".arrow keys to move...............",
-	".X to action......................",
-	".Z to undo, R to restart..........",
+	".swipe to move....................",
+	".tap to action....................",
+	"..................................",
 	".................................."];
 
 var titletemplate_select0 = [
@@ -7269,9 +7269,9 @@ var titletemplate_select0 = [
 	"..................................",
 	".............continue.............",
 	"..................................",
-	".arrow keys to move...............",
-	".X to action......................",
-	".Z to undo, R to restart..........",
+	".swipe to move....................",
+	".tap to action....................",
+	"..................................",
 	".................................."];
 
 var titletemplate_select1 = [
@@ -7284,9 +7284,9 @@ var titletemplate_select1 = [
 	"..................................",
 	"...........#.continue.#...........",
 	"..................................",
-	".arrow keys to move...............",
-	".X to action......................",
-	".Z to undo, R to restart..........",
+	".swipe to move....................",
+	".tap to action....................",
+	"..................................",
 	".................................."];
 
 
@@ -7300,9 +7300,9 @@ var titletemplate_firstgo_selected = [
 	"###########.start game.###########",
 	"..................................",
 	"..................................",
-	".arrow keys to move...............",
-	".X to action......................",
-	".Z to undo, R to restart..........",
+	".swipe to move....................",
+	".tap to action....................",
+	"..................................",
 	".................................."];
 
 var titletemplate_select0_selected = [
@@ -7315,9 +7315,9 @@ var titletemplate_select0_selected = [
 	"..................................",
 	".............continue.............",
 	"..................................",
-	".arrow keys to move...............",
-	".X to action......................",
-	".Z to undo, R to restart..........",
+	".swipe to move....................",
+	".tap to action....................",
+	"..................................",
 	".................................."];
 
 var titletemplate_select1_selected = [
@@ -7330,9 +7330,9 @@ var titletemplate_select1_selected = [
 	"..................................",
 	"############.continue.############",
 	"..................................",
-	".arrow keys to move...............",
-	".X to action......................",
-	".Z to undo, R to restart..........",
+	".swipe to move....................",
+	".tap to action....................",
+	"..................................",
 	"................................."];
 
 var titleImage=[];
@@ -7345,7 +7345,8 @@ var titleSelection=0;
 var titleSelected=false;
 
 function showContinueOptionOnTitleScreen(){
-	return (curlevel>0||curlevelTarget!==null)&&(curlevel in state.levels);
+	return false;
+	//return (curlevel>0||curlevelTarget!==null)&&(curlevel in state.levels);
 }
 
 function unloadGame() {

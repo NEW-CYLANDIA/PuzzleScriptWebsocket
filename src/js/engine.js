@@ -146,41 +146,6 @@ var titleMode=0;//1 means there are options
 var titleSelection=0;
 var titleSelected=false;
 
-// TODO figure out if this stuff is still needed
-// const ws = new WebSocket("ws://localhost:8080")
-
-// ws.onopen = function(ws) {
-// 	// TODO store uid locally?
-// 	ws.onmessage = function (data) {
-// 		console.log(data);
-// 	}
-// }
-
-// function sendMessage(msg) {
-// 	// Wait until the state of the socket is not ready and send the message when it is...
-// 	waitForSocketConnection(ws, function () {
-// 		// console.log("message sent!!!");
-// 		ws.send(msg);
-// 	});
-// }
-
-// // Make the function wait until the connection is made...
-// function waitForSocketConnection(socket, callback) {
-// 	setTimeout(
-// 		function () {
-// 			if (socket.readyState === 1) {
-// 				// console.log("Connection is made")
-// 				if (callback != null) {
-// 					callback();
-// 				}
-// 			} else {
-// 				// console.log("wait for connection...")
-// 				waitForSocketConnection(socket, callback);
-// 			}
-
-// 		}, 5); // wait 5 milisecond for the connection...
-// }
-
 function showContinueOptionOnTitleScreen(){
 	// always start from beginning
 	return false;
@@ -291,17 +256,6 @@ function generateTitleScreen()
 			titleImage[3+i]=row.slice(0,width-line.length)+line;
 		}
 	}
-
-	// TODO old
-	// var handshakePayload = {
-	// 	"handshake": true,
-	// 	"type": "bridge",
-	// 	"engine": "puzzlescript",
-	// 	"id": title.replace(" ", "_"),
-	// 	"session_id": "test"
-	// }
-
-	// sendMessage(JSON.stringify(handshakePayload))
 }
 
 var introstate = {
@@ -3150,11 +3104,7 @@ function nextLevel() {
 			curlevel=0;
 			curlevelTarget=null;
 
-			sendMessage(JSON.stringify({
-				"type": "bridge",
-				"session_id": "test", // TODO figure out how we're setting this
-				"impact": state.metadata.impact
-			}))
+			requestImpact(state.metadata.impact)
 
 			goToTitleScreen();
 			tryPlayEndGameSound();

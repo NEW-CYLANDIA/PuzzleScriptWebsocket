@@ -205,10 +205,10 @@ function generateTitleScreen()
 	} else if (noUndo) {
 		titleImage[11]=".......R to restart...........................";
 	} else if (noRestart) {
-		titleImage[11]=".Z to undo.....................";
+		titleImage[11]=".use menu to undo.....................";
 	}
 	if (noAction) {
-		titleImage[10]=".......X to select............................";
+		titleImage[10]=".......tap to continue........................";
 	}
 	for (var i=0;i<titleImage.length;i++)
 	{

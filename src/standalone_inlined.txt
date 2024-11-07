@@ -7345,8 +7345,9 @@ var titleSelection=0;
 var titleSelected=false;
 
 function showContinueOptionOnTitleScreen(){
+	// always start from beginning
 	return false;
-	//return (curlevel>0||curlevelTarget!==null)&&(curlevel in state.levels);
+	// return (curlevel>0||curlevelTarget!==null)&&(curlevel in state.levels);
 }
 
 function unloadGame() {
@@ -7453,7 +7454,6 @@ function generateTitleScreen()
 			titleImage[3+i]=row.slice(0,width-line.length)+line;
 		}
 	}
-
 }
 
 var introstate = {
@@ -10301,6 +10301,9 @@ function nextLevel() {
 			
 			curlevel=0;
 			curlevelTarget=null;
+
+			requestImpact(state.metadata.impact)
+
 			goToTitleScreen();
 			tryPlayEndGameSound();
 		}		
@@ -11865,7 +11868,7 @@ var codeMirrorFn = function() {
                         if (match!==null) {
                             var token = match[0].trim();
                             if (sol) {
-                                if (['title','author','homepage','background_color','text_color','key_repeat_interval','realtime_interval','again_interval','flickscreen','zoomscreen','color_palette','youtube'].indexOf(token)>=0) {
+                                if (['title','author','homepage','impact','background_color','text_color','key_repeat_interval','realtime_interval','again_interval','flickscreen','zoomscreen','color_palette','youtube'].indexOf(token)>=0) {
                                     
                                     if (token==='author' || token==='homepage' || token==='title') {
                                         stream.string=mixedCase;
@@ -14971,7 +14974,7 @@ function compile(command, text, randomseed) {
         
         if (IDE){
             if (state.metadata.title!==undefined) {
-                document.title="PuzzleScript - " + state.metadata.title;
+                document.title="PuzzleScriptWS - " + state.metadata.title;
             }
         }
     }

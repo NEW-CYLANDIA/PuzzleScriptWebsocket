@@ -3106,8 +3106,10 @@ function nextLevel() {
 
 			requestImpact(state.metadata.impact)
 
-			goToTitleScreen();
+			// goToTitleScreen();
+			canvas.remove()
 			tryPlayEndGameSound();
+			window.close();
 		}		
 		//continue existing game
 	}
